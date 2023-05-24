@@ -1,1 +1,1 @@
-TestGuru::Application::VERSIONS = "1.0.0"               #Lesson1
+TestGuru::Application::VERSIONS = "0.1.0"
