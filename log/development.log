@@ -51,3 +51,10 @@ Started GET "/www.thinknetica.com" for 127.0.0.1 at 2023-05-24 22:54:25 +0300
   
 ActionController::RoutingError (No route matches [GET] "/www.thinknetica.com"):
   
+Started GET "/" for 127.0.0.1 at 2023-05-29 11:33:56 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/unholy/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/unholy/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 3.0ms | Allocations: 528)
+Completed 200 OK in 30ms (Views: 8.0ms | ActiveRecord: 0.0ms | Allocations: 3757)
+
+
