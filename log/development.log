@@ -19,3 +19,42 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 32ms (Views: 10.6ms | ActiveRecord: 0.0ms | Allocations: 3759)
 
 
+Started GET "/" for 127.0.0.1 at 2023-05-24 22:50:08 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/unholy/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/unholy/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 2.5ms | Allocations: 528)
+Completed 200 OK in 25ms (Views: 6.7ms | ActiveRecord: 0.0ms | Allocations: 3757)
+
+
+Started GET "/" for 127.0.0.1 at 2023-05-24 22:52:03 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/unholy/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/unholy/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 2.8ms | Allocations: 528)
+Completed 200 OK in 14ms (Views: 6.6ms | ActiveRecord: 0.0ms | Allocations: 3757)
+
+
+Started GET "/" for 127.0.0.1 at 2023-05-24 22:52:45 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/unholy/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/unholy/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.5ms | Allocations: 528)
+Completed 200 OK in 11ms (Views: 4.6ms | ActiveRecord: 0.0ms | Allocations: 3757)
+
+
+Started GET "/" for 127.0.0.1 at 2023-05-24 22:54:13 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/unholy/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/unholy/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.6ms | Allocations: 528)
+Completed 200 OK in 15ms (Views: 8.6ms | ActiveRecord: 0.0ms | Allocations: 3757)
+
+
+Started GET "/www.thinknetica.com" for 127.0.0.1 at 2023-05-24 22:54:25 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/www.thinknetica.com"):
+  
+Started GET "/" for 127.0.0.1 at 2023-05-29 11:33:56 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/unholy/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/unholy/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 3.0ms | Allocations: 528)
+Completed 200 OK in 30ms (Views: 8.0ms | ActiveRecord: 0.0ms | Allocations: 3757)
+
+
