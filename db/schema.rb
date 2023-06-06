@@ -10,12 +10,64 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_03_092712) do
-  create_table "tests", force: :cascade do |t|
-    t.string "title", null: false
-    t.integer "level"
+ActiveRecord::Schema[7.0].define(version: 2023_06_06_214603) do
+  create_table "answers", force: :cascade do |t|
+    t.string "body", null: false
+    t.boolean "positive", default: false, null: false
+    t.integer "question_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "title", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.string "body", null: false
+    t.integer "test_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "result_tests", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "user_name", null: false
+    t.integer "test_id", null: false
+    t.string "test_title", null: false
+    t.boolean "passed"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "results", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "user_name", null: false
+    t.integer "test_id", null: false
+    t.string "test_title", null: false
+    t.integer "question_id", null: false
+    t.string "question_body", null: false
+    t.string "answer_body", null: false
+    t.boolean "answer_positive", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tests", force: :cascade do |t|
+    t.string "title", null: false
+    t.integer "level", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "role", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "level"
   end
 
 end

@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  user_name: MyString
+  test_id: 1
+  test_title: MyString
+  question_id: 1
+  question_body: MyString
+  answer_body: MyString
+  answer_positive: false
+
+two:
+  user_id: 1
+  user_name: MyString
+  test_id: 1
+  test_title: MyString
+  question_id: 1
+  question_body: MyString
+  answer_body: MyString
+  answer_positive: false

@@ -27,6 +27,6 @@ ENTITIES:
 * Tests
 * Questions
 * Answers
-* Results
-* Teachers/Admins
 * Users
+* Results
+* Category
