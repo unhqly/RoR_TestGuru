@@ -1,1 +1,1 @@
-TestGuru::Application::VERSIONS = "0.1.0"
+RoRTestguru6::Application::VERSIONS = "0.1.0"
