@@ -1,4 +1,4 @@
-class CreateResultTests < ActiveRecord::Migration[7.0]
+class CreateResultTests < ActiveRecord::Migration[6.1]
   def change
     create_table :result_tests do |t|
       t.references :user, foreign_key: {to_table: :users}, null: false
