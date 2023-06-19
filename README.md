@@ -22,3 +22,11 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+ENTITIES: 
+* Tests
+* Questions
+* Answers
+* Users
+* Results
+* Category
