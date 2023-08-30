@@ -500,3 +500,46 @@ Completed 200 OK in 44ms (Views: 24.9ms | ActiveRecord: 0.0ms | Allocations: 345
   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
   [1m[36mAnswer Create (2.1ms)[0m  [1m[32mINSERT INTO "answers" ("body", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["body", "false"], ["created_at", "2023-08-28 22:10:18.775471"], ["updated_at", "2023-08-28 22:10:18.775471"]]
   [1m[36mTRANSACTION (15.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests"[0m
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT "tests".* FROM "tests" ORDER BY "tests"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTest Load (0.1ms)[0m  [1m[34mSELECT "tests"."id", "tests"."title" FROM "tests"[0m
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests" WHERE "tests"."level" = ?[0m  [["level", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mResultTest Create (1.2ms)[0m  [1m[32mINSERT INTO "result_tests" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2023-08-30 10:42:20.191821"], ["updated_at", "2023-08-30 10:42:20.191821"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mResultTest Create (6.4ms)[0m  [1m[32mINSERT INTO "result_tests" ("user_id", "test_id", "passed", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["test_id", 1], ["passed", 1], ["created_at", "2023-08-30 10:43:10.235034"], ["updated_at", "2023-08-30 10:43:10.235034"]]
+  [1m[36mTRANSACTION (5.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? AND "users"."level" = ?[0m  [["id", 1], ["level", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 1]]
+  [1m[36mResultTest Load (0.6ms)[0m  [1m[34mSELECT "result_tests".* FROM "result_tests" WHERE "result_tests"."user_id" = ? AND "result_tests"."level" = ?[0m  [["user_id", 1], ["level", 1]]
+  [1m[36mResultTest Load (0.5ms)[0m  [1m[34mSELECT "result_tests".* FROM "result_tests" JOIN tests ON tests.id=result_tests.test_id WHERE "result_tests"."user_id" = ? AND "result_tests"."level" = ?[0m  [["user_id", 1], ["level", 1]]
+  [1m[36mResultTest Load (0.5ms)[0m  [1m[34mSELECT "result_tests".* FROM "result_tests" JOIN tests ON tests.id=result_tests.test_id WHERE "result_tests"."user_id" = ? AND "result_tests"."level" = ?[0m  [["user_id", 1], ["level", 1]]
+  [1m[36mResultTest Load (1.0ms)[0m  [1m[34mSELECT "result_tests".* FROM "result_tests" JOIN tests ON tests.id=result_tests.test_id WHERE "result_tests"."user_id" = ? AND "result_tests"."level" = ?[0m  [["user_id", 1], ["level", 1]]
+  [1m[36mResultTest Load (0.5ms)[0m  [1m[34mSELECT "result_tests".* FROM "result_tests" JOIN tests ON tests.id=result_tests.test_id WHERE "result_tests"."user_id" = ? AND "result_tests"."level" = ?[0m  [["user_id", 1], ["level", 1]]
+  [1m[36mResultTest Load (0.8ms)[0m  [1m[34mSELECT "result_tests".* FROM "result_tests" JOIN tests ON tests.id=result_tests.test_id WHERE "result_tests"."user_id" = ? AND "result_tests"."level" = ?[0m  [["user_id", 1], ["level", 1]]
+  [1m[36mResultTest Load (0.9ms)[0m  [1m[34mSELECT "result_tests".* FROM "result_tests" JOIN tests ON result_tests.test_id=tests.id WHERE "result_tests"."user_id" = ? AND "result_tests"."level" = ?[0m  [["user_id", 1], ["level", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" JOIN result_tests ON users.id=result_tests.user_id JOIN tests ON result_tests.test_id=tests.id WHERE "users"."user_id" = ? AND "users"."level" = ?[0m  [["user_id", 1], ["level", 1]]
+  [1m[36mTest Load (0.5ms)[0m  [1m[34mSELECT "tests".* FROM "tests" JOIN result_tests on test.id = result_tests.test_id[0m
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests" JOIN result_tests ON result_tests.test_id = tests.id JOIN users ON result_tests.user_id = users.id WHERE "tests"."level" = ? AND "users"."id" = ?[0m  [["level", 1], ["id", 1]]
+  [1m[36mTest Load (0.5ms)[0m  [1m[34mSELECT "tests".* FROM "tests" JOIN result_tests on test.id = result_tests.test_id[0m
+  [1m[36mTest Load (0.4ms)[0m  [1m[34mSELECT "tests".* FROM "tests" JOIN result_tests ON result_tests.test_id = tests.id JOIN users ON result_tests.user_id = users.id WHERE "tests"."level" = ? AND "users"."id" = ?[0m  [["level", 1], ["id", 1]]
+  [1m[36mTest Load (0.6ms)[0m  [1m[34mSELECT "tests".* FROM "tests" JOIN result_tests on test.id = result_tests.test_id[0m
+  [1m[36mTest Load (0.7ms)[0m  [1m[34mSELECT "tests".* FROM "tests" JOIN result_tests rt on rt.test_id = tests.id JOIN users us ON result_tests.user_id = us.id WHERE "tests"."level" = ? AND "us"."id" = ?[0m  [["level", 1], ["id", 1]]
+  [1m[36mTest Load (0.5ms)[0m  [1m[34mSELECT "tests".* FROM "tests" JOIN result_tests rt on rt.test_id = tests.id JOIN users us ON us.id =  result_tests.user_id WHERE "tests"."level" = ? AND "us"."id" = ?[0m  [["level", 1], ["id", 1]]
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT "tests".* FROM "tests" JOIN result_tests rt on rt.test_id = tests.id JOIN users us ON us.id = rt.user_id WHERE "tests"."level" = ? AND "us"."id" = ?[0m  [["level", 1], ["id", 1]]
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests" JOIN result_tests ON result_tests.test_id = tests.id JOIN users ON users.id = result_tests.user_id WHERE "tests"."level" = ? AND "users"."id" = ?[0m  [["level", 1], ["id", 1]]
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests" JOIN result_tests ON result_tests.test_id = tests.id JOIN users ON users.id = result_tests.user_id WHERE "tests"."level" = ? AND "users"."id" = ?[0m  [["level", 1], ["id", 1]]
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests" JOIN result_tests ON result_tests.test_id = tests.id JOIN users ON users.id = result_tests.user_id WHERE "tests"."level" = ? AND "users"."id" = ?[0m  [["level", 2], ["id", 1]]
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests" JOIN result_tests ON result_tests.test_id = tests.id JOIN users ON users.id = result_tests.user_id WHERE "tests"."level" = ? AND "users"."id" = ?[0m  [["level", 1], ["id", 1]]
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTest Load (0.4ms)[0m  [1m[34mSELECT "tests".* FROM "tests" JOIN result_tests ON result_tests.test_id = tests.id JOIN users ON users.id = result_tests.user_id WHERE "tests"."level" = ? AND "users"."id" = ?[0m  [["level", 1], ["id", 1]]
