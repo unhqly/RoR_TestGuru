@@ -13,13 +13,25 @@ User.create(name: 'Nikita', role: 'student', level: 2)
 User.create(name: 'Vladimir', role: 'teacher', level: 3)
 User.create(name: 'Anastasiya', role: 'teacher', level: 3)
 
-Category.create(title: 'Database Manipulation')
-Category.create(title: 'Backend')
-Category.create(title: 'Frontend')
+category_titles = ['Database', 'Backend', 'Frontend']
+categories = []
+test_titles = ['SQL', 'Ruby', 'JavaScript']
+tests = []
+question_bodies = ['What operator does SQL have?', 'Does SQL have "IF-ELSE" construction?', 
+'Ruby has "RoR" framework', 'Ruby has "Django" framework', '"JS" stands for Jam Session ', 'JavaScript is a common frontend language']
+questions = []
 
-Test.create(title: 'SQL', level: 0, category_id: 1)
-Test.create(title: 'Ruby', level: 1, category_id: 2)
-Test.create(title: 'JavaScript', level: 1, category_id: 3)
+category_titles.each { |title| categories << Category.create(title: title) }
+
+categories.each_with_index { |category, index| tests << Test.create(title: test_titles[index], level: rand(0..3), category_id: category.id) }
+
+-------------------
+
+tests.each do |test| 
+  question_bodies.each { |body| questions <<  Question.create(body: body, test_id: test.id) }
+end
+
+-------------------
 
 Question.create(body: 'What operator does SQL have?', test_id: 1)
 Question.create(body: 'Does SQL have "IF-ELSE" construction?', test_id: 1)

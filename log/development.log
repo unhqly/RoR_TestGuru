@@ -595,3 +595,48 @@ Completed 200 OK in 44ms (Views: 24.9ms | ActiveRecord: 0.0ms | Allocations: 345
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "tests"."title" FROM "tests" JOIN categories ON tests.category_id = categories.id WHERE "categories"."title" = ? ORDER BY "tests"."title" DESC[0m  [["title", "ehh"]]
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "tests"."title" FROM "tests" JOIN categories ON tests.category_id = categories.id WHERE "categories"."title" = ? ORDER BY "tests"."title" DESC[0m  [["title", "daa"]]
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "tests"."title" FROM "tests" JOIN categories ON tests.category_id = categories.id WHERE "categories"."title" = ? ORDER BY "tests"."title" DESC[0m  [["title", "kavo"]]
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTest Load (1.5ms)[0m  [1m[34mSELECT "tests".* FROM "tests" JOIN result_tests ON result_tests.test_id = tests.id JOIN users ON users.id = result_tests.user_id WHERE "tests"."level" = ? AND "users"."id" = ?[0m  [["level", 0], ["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT "tests".* FROM "tests"[0m
+  [1m[36mResultTest Load (0.2ms)[0m  [1m[34mSELECT "result_tests".* FROM "result_tests"[0m
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests"[0m
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests" JOIN result_tests ON result_tests.test_id = tests.id JOIN users ON users.id = result_tests.user_id WHERE "tests"."level" = ? AND "users"."id" = ?[0m  [["level", 0], ["id", 1]]
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT "tests".* FROM "tests" JOIN result_tests ON result_tests.test_id = tests.id JOIN users ON users.id = result_tests.user_id WHERE "tests"."level" = ? AND "users"."id" = ?[0m  [["level", 1], ["id", 1]]
+  [1m[36mTest Load (0.8ms)[0m  [1m[34mSELECT "tests".* FROM "tests" JOIN result_tests ON result_tests.test_id = tests.id WHERE "tests"."level" = ? AND "users"."id" = ?[0m  [["level", 1], ["id", 1]]
+  [1m[36mTest Load (0.5ms)[0m  [1m[34mSELECT "tests".* FROM "tests" JOIN result_tests ON result_tests.test_id = tests.id WHERE "tests"."level" = ? AND "tests"."user_id" = ?[0m  [["level", 1], ["user_id", 1]]
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests" JOIN result_tests ON result_tests.test_id = tests.id WHERE "tests"."level" = ? AND "result_tests"."user_id" = ?[0m  [["level", 1], ["user_id", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests" JOIN result_tests ON result_tests.test_id = tests.id WHERE "tests"."level" = ? AND "result_tests"."user_id" = ?[0m  [["level", 1], ["user_id", 1]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (9.0ms)[0m  [1m[32mINSERT INTO "categories" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Database Manipulation"], ["created_at", "2023-08-31 15:01:08.545663"], ["updated_at", "2023-08-31 15:01:08.545663"]]
+  [1m[36mTRANSACTION (10.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (1.3ms)[0m  [1m[32mINSERT INTO "categories" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Backend"], ["created_at", "2023-08-31 15:01:08.575090"], ["updated_at", "2023-08-31 15:01:08.575090"]]
+  [1m[36mTRANSACTION (8.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (1.5ms)[0m  [1m[32mINSERT INTO "categories" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Frontend"], ["created_at", "2023-08-31 15:01:08.587256"], ["updated_at", "2023-08-31 15:01:08.587256"]]
+  [1m[36mTRANSACTION (5.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Database Manipulation"], ["created_at", "2023-08-31 15:02:11.121512"], ["updated_at", "2023-08-31 15:02:11.121512"]]
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.6ms)[0m  [1m[32mINSERT INTO "categories" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Backend"], ["created_at", "2023-08-31 15:02:11.129780"], ["updated_at", "2023-08-31 15:02:11.129780"]]
+  [1m[36mTRANSACTION (10.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Frontend"], ["created_at", "2023-08-31 15:02:11.147798"], ["updated_at", "2023-08-31 15:02:11.147798"]]
+  [1m[36mTRANSACTION (6.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTest Create (1.8ms)[0m  [1m[32mINSERT INTO "tests" ("title", "level", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "SQL"], ["level", 1], ["category_id", 7], ["created_at", "2023-08-31 15:32:56.921069"], ["updated_at", "2023-08-31 15:32:56.921069"]]
+  [1m[36mTRANSACTION (7.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTest Create (2.7ms)[0m  [1m[32mINSERT INTO "tests" ("title", "level", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Ruby"], ["level", 3], ["category_id", 8], ["created_at", "2023-08-31 15:32:56.932361"], ["updated_at", "2023-08-31 15:32:56.932361"]]
+  [1m[36mTRANSACTION (11.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTest Create (7.6ms)[0m  [1m[32mINSERT INTO "tests" ("title", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "JavaScript"], ["category_id", 9], ["created_at", "2023-08-31 15:32:56.948481"], ["updated_at", "2023-08-31 15:32:56.948481"]]
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT "tests".* FROM "tests"[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
