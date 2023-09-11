@@ -45,20 +45,6 @@ ActiveRecord::Schema.define(version: 2023_06_06_211923) do
     t.index ["user_id"], name: "index_result_tests_on_user_id"
   end
 
-  create_table "results", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "test_id", null: false
-    t.integer "question_id", null: false
-    t.integer "answer_id", null: false
-    t.boolean "answer_positive", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["answer_id"], name: "index_results_on_answer_id"
-    t.index ["question_id"], name: "index_results_on_question_id"
-    t.index ["test_id"], name: "index_results_on_test_id"
-    t.index ["user_id"], name: "index_results_on_user_id"
-  end
-
   create_table "tests", force: :cascade do |t|
     t.string "title", null: false
     t.integer "level", default: 0
@@ -80,9 +66,5 @@ ActiveRecord::Schema.define(version: 2023_06_06_211923) do
   add_foreign_key "questions", "tests"
   add_foreign_key "result_tests", "tests"
   add_foreign_key "result_tests", "users"
-  add_foreign_key "results", "answers"
-  add_foreign_key "results", "questions"
-  add_foreign_key "results", "tests"
-  add_foreign_key "results", "users"
   add_foreign_key "tests", "categories"
 end
