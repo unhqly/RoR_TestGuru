@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :tests
   has_many :result_tests
   has_many :tests, through: :result_tests
 
