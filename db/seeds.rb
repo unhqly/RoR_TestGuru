@@ -23,7 +23,7 @@ user_names.each { |name| users << User.create(name: name, role: roles.sample, le
 
 category_titles.each { |title| categories << Category.create(title: title) }
 
-categories.each { |category| tests << Test.create(title: test_titles.sample, level: rand(0..3), category_id: category.id)}
+categories.each { |category| tests << Test.create(title: test_titles.sample, level: rand(0..3), category_id: category.id, user_id: users.sample.id)}
 
 tests.each do |test| 
   2.times { questions << Question.create(body: question_bodies.sample, test_id: test.id) }
